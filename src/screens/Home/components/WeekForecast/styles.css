@@ -1,0 +1,47 @@
+.week__title {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0 0 30px;
+}
+
+.week__content {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 0 0 5px;
+}
+
+.week__day-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.week__day-name {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 10px;
+    color: #808080;
+}
+
+.week__day-img {
+    width: 50px;
+    margin: 0 0 10px;
+}
+
+.week__day-temperature {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@media (max-width: 1000px) {
+    .week__content {
+        gap: 20px;
+    }
+
+    .week__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin: 0 0 20px;
+    }
+}
