@@ -1,0 +1,17 @@
+.input {
+    border: none;
+    color: #333333;
+    background-color: transparent;
+    padding: 5px;
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: #333333;
+    }
+}
+
+.input__error {
+    font-size: 14px;
+    color: #ff3523;
+}

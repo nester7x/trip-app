@@ -1,0 +1,70 @@
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.home__content {
+    padding: 30px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 70%;
+}
+
+.home__title {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+.home__title span {
+    font-weight: 700;
+}
+
+.home__trip-cards {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    gap: 25px;
+    padding: 0 0 5px;
+}
+
+.home__add-trip-btn {
+    position: relative;
+    background-color: rgb(240,242,247);
+    padding: 15px;
+    height: 178px;
+    transition: .35s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+}
+
+@media (max-width: 1000px) {
+    .home__title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home__content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 426px) {
+    .home__content {
+        padding: 15px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .home__trip-cards {
+        gap: 15px;
+    }
+}

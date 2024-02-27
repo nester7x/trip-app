@@ -1,0 +1,93 @@
+.modal {
+    padding: 25px;
+    position: absolute;
+    background-color: #ffffff;
+    width: 400px;
+}
+
+.modal__description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 25px;
+    margin: 0 0 50px;
+    position: relative;
+    &:after {
+        position: absolute;
+        content: '';
+        left: -25px;
+        bottom: 0;
+        width: calc(100% + 50px);
+        height: 1px;
+        background-color: #808080;
+    }
+}
+
+.modal__title {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.modal__cross {
+    width: 20px;
+    cursor: pointer;
+}
+
+.modal__label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 10px;
+    &:nth-last-child(2) {
+        margin: 0 0 50px;
+    }
+}
+
+.modal__label span {
+    position: relative;
+    font-weight: 500;
+    &:before {
+        position: absolute;
+        left: -10px;
+        top: 0;
+        content: '*';
+        color: #ff3523;
+    }
+}
+
+.modal__buttons {
+    padding: 25px 0 0;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    position: relative;
+    &:before {
+        position: absolute;
+        content: '';
+        left: -25px;
+        top: 0;
+        width: calc(100% + 50px);
+        height: 1px;
+        background-color: #808080;
+    }
+}
+
+.modal__btn.btn {
+    padding: 5px 15px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.modal__btn--cancel.btn {
+    border: 1px solid #808080;
+    border-radius: 3px;
+    color: #000000;
+}
+
+.modal__btn--save.btn {
+    border: 1px solid rgb(23, 133, 255);
+    border-radius: 3px;
+    color: #ffffff;
+    background-color: rgb(23, 133, 255);
+}
