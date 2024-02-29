@@ -1,0 +1,38 @@
+[
+  {
+    "cityName": "Berlin",
+    "cityImg": "https://media.cntraveler.com/photos/5b914e80d5806340ca438db1/1:1/w_2250,h_2250,c_limit/BrandenburgGate_2018_GettyImages-549093677.jpg"
+  },
+  {
+    "cityName": "Tokyo",
+    "cityImg": "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1663763125.jpg"
+  },
+  {
+    "cityName": "Barcelona",
+    "cityImg": "https://a.cdn-hotels.com/gdcs/production81/d1983/1441d9b5-d0e6-4230-9923-646d58ba66d8.jpg"
+  },
+  {
+    "cityName": "Rome",
+    "cityImg": "https://tourismmedia.italia.it/is/image/mitur/20220127150143-colosseo-roma-lazio-shutterstock-756032350-1?wid=1600&hei=900&fit=constrain,1&fmt=webp"
+  },
+  {
+    "cityName": "Kyiv",
+    "cityImg": "https://cdn.britannica.com/18/194818-050-E7A7A993/view-Kiev-Ukraine.jpg"
+  },
+  {
+    "cityName": "Lviv Ukraine",
+    "cityImg": "https://ukraine.ua/wp-content/uploads/2020/09/Lviv-panoramic-view.Patteran.shutterstock-1536x1017.jpg"
+  },
+  {
+    "cityName": "Trostyanets Ukraine",
+    "cityImg": "https://travel.trostyanets.com/wp-content/uploads/2020/06/194560931_5581817918527285_5001224584729785169_n.jpg"
+  },
+  {
+    "cityName": "London",
+    "cityImg": "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg"
+  },
+  {
+    "cityName": "Warsaw",
+    "cityImg": "https://europeinwinter.com/wp-content/uploads/2022/06/iStock-540370712.jpeg"
+  }
+]

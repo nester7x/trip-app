@@ -1,15 +1,18 @@
 .trip-card {
     border: 1px solid #808080;
     padding: 190px 15px 15px;
-    min-width: 220px;
+    min-width: 235px;
     position: relative;
     background-color: #ffffff;
     transition: .35s;
-    cursor: pointer;
 }
 
 .trip-card.focus {
     border: 1px solid #81c4ff;
+}
+
+.trip-card__content {
+    cursor: pointer;
 }
 
 .trip-card__img {
@@ -33,6 +36,21 @@
     font-size: 16px;
     line-height: 20px;
     color: #808080;
+    margin: 0 0 8px;
+}
+
+.trip-card__delete-btn {
+    display: block;
+    margin-left: auto;
+    transition: .25s;
+    color: #ff3523;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 3px;
+    &:hover {
+        color: #ffffff;
+        background-color: #ff3523;
+    }
 }
 
 @media (max-width: 1000px) {

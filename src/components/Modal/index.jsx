@@ -1,42 +1,31 @@
 import React from 'react';
-import './styles.css';
+import PropTypes from 'prop-types';
+
 import cross from 'src/assets/Images/x-button.png';
 import Button from '../Button';
-import PropTypes from 'prop-types';
-const Modal = ({ title, handleSubmit }) => {
+
+import './styles.css';
+
+const Modal = ({ title, handleSubmit, setIsOpen, error, children }) => {
   return (
     <form className="modal" onSubmit={handleSubmit}>
       <div className="modal__description">
         <h6 className="modal__title">{title}</h6>
-        <img src={cross} alt="" className="modal__cross" />
+        <img
+          className="modal__cross"
+          src={cross}
+          alt="cross icon"
+          onClick={() => setIsOpen(false)}
+        />
       </div>
-      <label className="modal__label">
-        <span>City</span>
-        <select name="city" id="city" className="modal__select">
-          <option value="Berlin" className="modal__option">
-            Berlin
-          </option>
-          <option value="Rome" className="modal__option">
-            Rome
-          </option>
-          <option value="Kyiv" className="modal__option">
-            Kyiv
-          </option>
-        </select>
-      </label>
-      <label className="modal__label">
-        <span>Start date</span>
-        <input type="date" />
-      </label>
-      <label className="modal__label">
-        <span>End date</span>
-        <input type="date" />
-      </label>
+      {children}
+      <p className="modal__error">{error}</p>
       <div className="modal__buttons">
         <Button
           className="btn modal__btn modal__btn--cancel"
           type="reset"
           text="Cancel"
+          onClick={() => setIsOpen(false)}
           disabled={false}
         />
         <Button
@@ -52,7 +41,10 @@ const Modal = ({ title, handleSubmit }) => {
 
 Modal.prototype = {
   title: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+  error: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Modal;

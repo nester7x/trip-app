@@ -6,11 +6,11 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    position: relative;
 }
 
 .search__img {
-    width: 20px;
-    cursor: pointer;
+    width: 25px;
 }
 
 @media (max-width: 426px) {
