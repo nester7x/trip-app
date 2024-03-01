@@ -25,7 +25,7 @@
 
 .home__trip-cards {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     overflow-x: auto;
     gap: 25px;
     padding: 0 0 5px;
@@ -60,7 +60,7 @@
 @media (max-width: 426px) {
     .home__content {
         padding: 15px;
-        gap: 20px;
+        gap: 10px;
         justify-content: center;
     }
 

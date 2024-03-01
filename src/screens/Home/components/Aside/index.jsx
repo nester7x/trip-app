@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import penguin from 'src/assets/Images/penguin.png';
-import { formatWeekDay } from 'src/utils/formatDate';
 import { icons } from 'src/constants/weatherIcons';
+import { formatWeekDay } from 'src/utils/formatDate';
 import parseSnakeToCamel from 'src/utils/snakeToCamel';
+import penguin from 'src/assets/Images/penguin.png';
 
 import './styles.css';
 

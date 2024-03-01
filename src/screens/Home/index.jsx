@@ -4,10 +4,10 @@ import Search from 'src/components/Search';
 import TripCard from './components/TripCard';
 import Aside from './components/Aside';
 import WeekForecast from './components/WeekForecast';
-import { formatDayMonthYear, formatYearMonthDay } from 'src/utils/formatDate';
-import { api } from 'src/utils/apiUtils';
-
 import TripAdd from './components/TripAdd';
+
+import { formatYearMonthDay } from 'src/utils/formatDate';
+import { api } from 'src/utils/apiUtils';
 
 import './styles.css';
 
@@ -49,20 +49,20 @@ const Home = () => {
   const handleAddTrip = (newTrip) => {
     const updatedTripCards = [...tripCards, newTrip];
     const sortedTrips = updatedTripCards.sort(
-      (a, b) => new Date(a.bookedDate.split(' - ')[0]) - new Date(b.bookedDate.split(' - ')[0])
+      (a, b) => new Date(a.startDate) - new Date(b.startDate)
     );
     setTripCards(sortedTrips);
     localStorage.setItem('tripCards', JSON.stringify(sortedTrips));
   };
 
-  const handleChooseTrip = async (cityName, bookedDate, index) => {
+  const handleChooseTrip = async (cityName, startDate, endDate, index) => {
     try {
       const todayData = await api.get(`${cityName}/today?unitGroup=metric&include=days`);
-      setTodayWeather(todayData);
-
       const weekData = await api.get(
-        `${cityName}/${formatYearMonthDay(bookedDate.split(' - ')[0])}/${formatYearMonthDay(bookedDate.split(' - ')[1])}?unitGroup=metric&include=days`
+        `${cityName}/${formatYearMonthDay(startDate)}/${formatYearMonthDay(endDate)}?unitGroup=metric&include=days`
       );
+
+      setTodayWeather(todayData);
       setWeekWeather(weekData);
 
       setSelectedTripIndex(index);
@@ -94,8 +94,11 @@ const Home = () => {
               key={index}
               img={card.img}
               cityName={card.cityName}
-              bookedDate={`${formatDayMonthYear(card.bookedDate.split(' - ')[0])} - ${formatDayMonthYear(card.bookedDate.split(' - ')[1])}`}
-              handleClick={() => handleChooseTrip(card.cityName, card.bookedDate, index)}
+              startDate={card.startDate}
+              endDate={card.endDate}
+              handleClick={() =>
+                handleChooseTrip(card.cityName, card.startDate, card.endDate, index)
+              }
               selected={selectedTripIndex === index}
               handleDelete={() => handleDeleteTrip(index)}
             />
@@ -107,7 +110,7 @@ const Home = () => {
         <WeekForecast weekWeather={weekWeather?.days} />
       </div>
       <Aside
-        selectedTripStartDate={tripCards[selectedTripIndex]?.bookedDate.split(' - ')[0]}
+        selectedTripStartDate={tripCards[selectedTripIndex]?.startDate}
         todayWeather={todayWeather}
       />
       <TripAdd

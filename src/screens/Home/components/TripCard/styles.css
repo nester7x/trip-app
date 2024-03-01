@@ -4,7 +4,9 @@
     min-width: 235px;
     position: relative;
     background-color: #ffffff;
-    transition: .35s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .trip-card.focus {

@@ -29,7 +29,9 @@
     font-size: 30px;
     line-height: 34px;
     margin: 0 0 15px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .aside__city {
@@ -103,7 +105,7 @@
     .home__aside {
         width: 100%;
         flex-direction: row;
-        gap: 20px;
+        justify-content: space-between;
     }
 
     .aside__img {
@@ -115,20 +117,12 @@
         margin: 0;
     }
 
-    .aside__temperature {
-        margin: 0;
-    }
-
     .aside__city {
         margin: 0;
     }
 }
 
 @media (max-width: 630px) {
-    .home__aside {
-        justify-content: flex-start;
-    }
-
     .aside__img {
         right: 5px;
         top: 5px;
@@ -176,5 +170,38 @@
     .aside__timer {
         width: 100%;
         justify-content: center;
+    }
+
+    .aside__weather-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .aside__week-day {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .aside__temperature {
+        font-size: 18px;
+        line-height: 22px;
+        flex-direction: row;
+        gap: 5px;
+        margin: 0 10px 0 0;
+    }
+
+    .aside__city {
+        font-size: 17px;
+        line-height: 21px;
+    }
+
+    .timer__num {
+        font-size: 15px;
+        line-height: 19px;
+    }
+
+    .timer__num span {
+        font-size: 7px;
+        line-height: 11px;
     }
 }
