@@ -6,6 +6,7 @@ import Aside from './components/Aside';
 import WeekForecast from './components/WeekForecast';
 import TripAdd from './components/TripAdd';
 
+import citiesDB from 'src/data/citiesDB.json';
 import { formatYearMonthDay } from 'src/utils/formatDate';
 import { api } from 'src/utils/apiUtils';
 
@@ -14,7 +15,16 @@ import './styles.css';
 const Home = () => {
   const [tripCards, setTripCards] = useState(() => {
     const storedTrips = localStorage.getItem('tripCards');
-    return storedTrips ? JSON.parse(storedTrips) : [];
+    return storedTrips
+      ? JSON.parse(storedTrips)
+      : [
+          {
+            cityName: citiesDB[0]?.cityName,
+            img: citiesDB[0]?.cityImg,
+            startDate: new Date(),
+            endDate: new Date().setDate(new Date().getDate() + 1)
+          }
+        ];
   });
 
   const [selectedTripIndex, setSelectedTripIndex] = useState(null);
