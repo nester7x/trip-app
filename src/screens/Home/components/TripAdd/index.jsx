@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-import citiesDB from 'src/data/citiesDB.json';
 import Modal from 'src/components/Modal';
 import checkDateRange from 'src/utils/checkDateRange';
-import { formatMonthDayYear } from 'src/utils/formatDate';
 import isOverlapping from 'src/utils/isOverlappingDates';
+import citiesDB from 'src/data/citiesDB.json';
 
 const TripAdd = ({ handleAddTrip, isOpen, setIsOpen, tripCards }) => {
   const [startDate, setStartDate] = useState('');
@@ -33,14 +32,15 @@ const TripAdd = ({ handleAddTrip, isOpen, setIsOpen, tripCards }) => {
     }
 
     if (isOverlapping(tripCards, new Date(startDate), new Date(endDate))) {
-      setModalError('You already have a trip booked for this time');
+      setModalError(isOverlapping(tripCards, new Date(startDate), new Date(endDate)));
       return;
     }
 
     const newTrip = {
       img: selectedCity.cityImg,
       cityName: selectedCity.cityName,
-      bookedDate: formatMonthDayYear(startDate) + ' - ' + formatMonthDayYear(endDate)
+      startDate: new Date(startDate),
+      endDate: new Date(endDate)
     };
     handleAddTrip(newTrip);
 
@@ -65,7 +65,7 @@ const TripAdd = ({ handleAddTrip, isOpen, setIsOpen, tripCards }) => {
         error={modalError}>
         <label className="modal__label">
           <span>City</span>
-          <select name="city" id="city" defaultValue="" className="modal__select">
+          <select className="modal__select" name="city" id="city" defaultValue="">
             <option value="" disabled hidden>
               Choose here
             </option>

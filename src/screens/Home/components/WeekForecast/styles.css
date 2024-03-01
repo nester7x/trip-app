@@ -46,3 +46,26 @@
         margin: 0 0 20px;
     }
 }
+
+@media (max-width: 426px) {
+    .week__content {
+        gap: 10px;
+    }
+
+    .week__title {
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 0 10px;
+    }
+
+    .week__day-temperature {
+        font-size: 13px;
+        line-height: 17px;
+    }
+
+    .week__day-img {
+        width: 30px;
+        height: 30px;
+        margin: 0 0 5px;
+    }
+}

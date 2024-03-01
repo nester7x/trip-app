@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { formatWeekDay } from 'src/utils/formatDate';
 import parseSnakeToCamel from 'src/utils/snakeToCamel';
 import { icons } from 'src/constants/weatherIcons';
 
 import './styles.css';
-import PropTypes from 'prop-types';
 
 const WeekForecast = ({ weekWeather }) => {
   return (

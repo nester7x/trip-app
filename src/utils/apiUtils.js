@@ -1,6 +1,6 @@
 const BASE_URL =
   'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/';
-const KEY = '&key=FMG87XEJRQ8HVYYWFE95X3QJX&contentType=json';
+const KEY = `&key=${process.env.REACT_APP_API_KEY}&contentType=json`;
 
 const handleResponse = async (response) => {
   try {

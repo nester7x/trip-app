@@ -1,13 +1,18 @@
 const isOverlapping = (tripCards, startDate, endDate) => {
-  return tripCards.some((trip) => {
-    const tripStartDate = new Date(trip.bookedDate.split(' - ')[0]);
-    const tripEndDate = new Date(trip.bookedDate.split(' - ')[1]);
+  if (
+    tripCards.some((trip) => {
+      const tripStartDate = new Date(trip.startDate);
+      const tripEndDate = new Date(trip.endDate);
 
-    return (
-      (startDate >= tripStartDate && startDate <= tripEndDate) ||
-      (endDate >= tripStartDate && endDate <= tripEndDate)
-    );
-  });
+      return (
+        (startDate >= tripStartDate && startDate <= tripEndDate) ||
+        (endDate >= tripStartDate && endDate <= tripEndDate) ||
+        (startDate <= tripStartDate && endDate >= tripEndDate)
+      );
+    })
+  ) {
+    return 'You already have a trip booked for this time';
+  }
 };
 
 export default isOverlapping;
